@@ -118,7 +118,7 @@
 			postData = postData||{},
 			ucColNames = ucColNames||true,
 			success = true;
-		console.log(ucColNames);
+		
 		$.ajax({
 			url: url,
 			data: $.extend(true, {}, postData, {method: methodName, returnFormat: "JSON"}),
