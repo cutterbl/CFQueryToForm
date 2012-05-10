@@ -8,6 +8,8 @@ CFQueryToForm will take ColdFusion's native JSON serialization of it's native Co
 
 CFRequestToForm will take a configuration object that will then make an Ajax request, based upon the configuration, and automatically apply the result to the form is was applied upon.
 
+[C 05.10.2012] You may now add a callback to the request, that will fire once the form has populated with the remote data.
+
 See the js file for documentation of usage.
 
 A MySQL script can be found in the /resources/db/ folder that will create the sample table used by the demo. This example should be compatible with ColdFusion 8 or higher.
