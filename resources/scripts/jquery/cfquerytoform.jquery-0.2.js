@@ -3,7 +3,7 @@
  * CFQueryToForm.jquery-0.1.js
  * 
  * VERSION
- * 0.1 (03.15.2011)
+ * 0.2 (05.10.2012)
  * 
  * AUTHOR
  * Steve 'Cutter' Blades, webDOTadminATcutterscrossing.com
@@ -61,7 +61,10 @@
 				switch(tag){
 					case "INPUT":
 						if(type === 'radio'||type === 'checkbox'){
-							(fld.attr("value").toString() === data[root].DATA[0][pos].toString())?fld.attr('checked','checked'):fld.removeAttr('checked');
+							$.each(fld, function (ind, el) {
+								var $el = $(el);
+								($el.attr("value").toString() === data[root].DATA[0][pos].toString()) ? $el.attr('checked','checked') : $el.removeAttr('checked');
+							});
 							break;
 						}
 					default:
@@ -106,18 +109,23 @@
  * arguments that a standard JQuery ajax 'error' would receive (jqXHR, textStatus, errorThrown). The 'errorThrown' will be the complete 'data'
  * object returned from the server.
  * 
+ * [C 05.10.2012]
+ * You may now provide a callback method to the request, that will run after the form is populate. The only argument received is the form itself
+ * 
  * @param {String} url
  * @param {String} methodName
  * @param {Object} postData
  * @param {String} root
  * @param {Boolean} ucColNames
+ * @param {function} callback
  */
 (function( $ ){
-	$.fn.CFRequestToForm=function(url, methodName, postData, root, ucColNames) {
+	$.fn.CFRequestToForm=function(url, methodName, postData, root, ucColNames, callback) {
 		var form = $(this),
 			postData = postData||{},
 			ucColNames = ucColNames||true,
-			success = true;
+			success = true,
+			callback = callback||$.noop;
 		
 		$.ajax({
 			url: url,
@@ -125,7 +133,8 @@
 			dataType: "json",
 			success: function(d, r, o){
 				if(d.success){
-					form.CFQueryToForm(d, root, ucColNames)
+					form.CFQueryToForm(d, root, ucColNames);
+					callback.call(form);
 				} else {
 					var e = $.Event("cffail");
 					form.trigger(e, [o, r, d]);

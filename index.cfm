@@ -8,8 +8,9 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<title>Untitled Document</title>
-		<script type="text/javascript" src="/resources/scripts/jquery/jquery-1.5.1.js"></script>
-		<script type="text/javascript" src="/resources/scripts/jquery/cfquerytoform.jquery-0.1.js"></script>
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+		<script type="text/javascript" src="/resources/scripts/jquery/cfquerytoform.jquery-0.2.js"></script>
+		<script src="/resources/scripts/jquery/jquery.serializeJSON-0.8.js"></script>
 		<script type="text/javascript">
 			$(document).ready(function(){
 				$('select##userId').change(function(e){
