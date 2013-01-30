@@ -1,6 +1,6 @@
 /**
  * TEMPLATE
- * CFQueryToForm.jquery-0.1.js
+ * jquery.cfquerytoform-0.2.js
  * 
  * VERSION
  * 0.2 (05.10.2012)

@@ -1,0 +1,35 @@
+{
+    "name": "cfquerytoform",
+    "version": "0.2.0",
+    "title": "CFQueryToForm",
+    "author": {
+        "name": "Steve 'Cutter' Blades",
+        "url": "http://www.cutterscrossing.com"
+    },
+    "licenses": [
+        {
+            "type": "Apache 2.0",
+            "url": "http://www.apache.org/licenses/LICENSE-2.0"
+        }
+    ],
+    "dependencies": {
+        "jquery": ">=1.4"
+    },
+    "description": "CFQueryToForm will take ColdFusion's native JSON serialization of it's native ColdFusion Query object, and apply the result to a form's fields. CFRequestToForm will take a configuration object that will then make an Ajax request, based upon the configuration, and automatically apply the result to the form is was applied upon.",
+    "keywords": [
+        "json",
+        "serialize",
+        "coldfusion",
+        "cold",
+        "fusion"
+    ],
+    "homepage": "https://github.com/cutterbl/CFQueryToForm",
+    "docs": "https://github.com/cutterbl/CFQueryToForm",
+    "bugs": "https://github.com/cutterbl/CFQueryToForm/issues",
+    "maintainers": [
+        {
+            "name": "Steve 'Cutter' Blades",
+            "url": "http://www.cutterscrossing.com"
+        }
+    ]
+}
